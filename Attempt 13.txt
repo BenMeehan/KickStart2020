@@ -1,0 +1,30 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int T=0;
+    int caseNo;
+    scanf("%d",&T);
+    for(caseNo=1 ; caseNo<=T ; caseNo++){
+        int N=0;
+        int max=-1;
+	int count=0;
+        scanf("%d",&N);
+        int V[N];
+
+        for (int i = 0; i < N; i++) {
+		scanf("%d",&V[i]);
+	}
+	for (int i=0 ; i<N ; i++){
+
+		if(V[i]>max&&(i+1==N||V[i]>V[i+1])){
+			count=count+1;
+		    }
+		if(V[i]>max){
+		        max=V[i];
+		    }
+	}
+	printf("Case #%d: %d\n",caseNo,count);
+    }
+   
+}
